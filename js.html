@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Projeto Gamers</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		body {
+			
+			margin: 0;
+			padding: 0;
+		}
+
+		html {
+			background: url(calloff.jpg) no-repeat center center fixed;
+			background-size: cover;
+	
+		}
+
+
+		#teladefundo {
+			width: 100vw;
+			height: 100vh;
+			background-color: rgba(0, 0, 0, 0.9);
+			position: fixed;
+			z-index: 1;
+		}
+
+
+		#barrasuperior {
+			background-color: #000;
+			width: 100vw;
+			height: 10vh;
+			box-shadow: 0px 0px 10px #000;
+			position: fixed;
+			z-index: 11;
+
+
+		}
+
+		#barradepesquisa {
+			border: 1px solid #fff;
+			background: none;
+			font-size: 20pt;
+			font-family: sans-serif;
+			position: absolute;
+			top: 3vh;
+			left: 7vw;
+			padding: 2px 0px 2px 10px;
+			border-radius: 2px;
+		}
+
+		#perfil {
+			background-color: rgba(51, 51, 51, 0.5);
+			width: 19vw;
+			height: 100vh;
+			
+			display: block;
+			position: fixed;
+			right: 0px;
+			border-radius: 5px;
+			margin: 0px 20px 0px 0px;
+			box-shadow: 0px 0px 10px #000;
+			z-index: 5;
+			overflow-x: hidden;
+		}
+
+
+		#perfil::-webkit-scrollbar {
+			display: none;
+		}
+
+
+		#fotoperfil {
+			width: 80%;
+			height: 200px;
+			background-color: #333;
+			border: 2px solid #444;
+			border-radius: 5px; 
+			margin: 15px 0px 0px 0px;
+			cursor: pointer;
+			position: relative;
+			top: 10vh;
+		}
+
+
+		#nomedeusuario {
+			font-family: sans-serif;
+			font-weight: bold;
+			color: #fff;
+			font-size: 20pt;
+			text-shadow: 0px 0px 10px #333;
+			position: relative;
+			top: 8vh;
+		}
+
+
+		#idade {
+			font-family: sans-serif;
+			color: #fff;
+			font-size: 15pt;
+			text-shadow: 0px 0px 10px #333;
+			border-bottom: 1px solid #555;
+			padding: 0px 0px 10px 0px;
+			margin: 0px 30px 0px 30px;
+			position: relative;
+			top: 7vh;
+		}
+
+
+		#jogos {
+			margin: 10px 0px 0px 0px;
+			font-family: sans-serif;
+			font-weight: bold;
+			color: #fff;
+			font-size: 20pt;
+			text-shadow: 0px 0px 10px #333;
+			position: relative;
+			top: 7vh;
+		}
+
+
+		#jogos1 {
+			margin: 20px 0px 0px 0px;
+			font-family: sans-serif;
+			font-weight: bold;
+			color: #555;
+			font-size: 20pt;
+			text-shadow: 0px 0px 10px #333;
+			position: relative;
+			top: 7vh;
+			
+			width: 80%;
+			padding: 10px 0px 0px 0px;
+	
+		}
+
+
+
+		#jogos2 {
+			margin: 20px 0px 0px 0px;
+			font-family: sans-serif;
+			font-weight: bold;
+			color: #555;
+			font-size: 20pt;
+			text-shadow: 0px 0px 10px #333;
+			position: relative;
+			top: 7vh;
+			border-top: 2px solid #111;
+			width: 80%;
+			padding: 10px 0px 0px 0px;
+	
+		}
+
+		#jogos3 {
+			margin: 20px 0px 0px 0px;
+			font-family: sans-serif;
+			font-weight: bold;
+			color: #fff;
+			font-size: 15pt;
+			text-shadow: 0px 0px 10px #333;
+			position: relative;
+			top: 7vh;
+			background-color: #333;
+			padding: 10px;
+			cursor: pointer;
+	
+		}
+
+
+		#pontuacao {
+			margin: 10px 0px 0px 0px;
+			font-family: sans-serif;
+			font-weight: bold;
+			color: #999;
+			font-size: 15pt;
+			text-shadow: 0px 0px 10px #333;
+			position: relative;
+			top: 7vh;
+			
+		}
+
+
+
+		#containerprincipal {
+			background-color: rgba(51, 51, 51, 0.5);
+			width: 79vw;
+			height: 100vh;
+			z-index: 3;
+			position: fixed;
+			border-radius: 5px;
+			box-shadow: 0px 0px 10px #000;
+			overflow-x: hidden;
+			margin: 0 auto;
+		}
+
+		#containerprincipal::-webkit-scrollbar {
+			display: none;
+		}
+
+
+
+		#status {
+			background-color: rgba(0, 0, 50, 0.0);
+			width: 95%;
+			height: 25%;
+			border: 1px solid #000;
+			border-radius: 5px;
+			box-shadow: 0px 0px 10px #000;
+			margin: 80px auto auto auto;
+		}
+
+
+		#inputstatus {
+			font-size: 20pt;
+			width: 95%;
+			position: relative;
+			top: 2vh;
+			margin: 0;
+			padding: 0px 0px 10vh 0px;
+			border-bottom: 2px solid #444;
+			border-top: none;
+			border-right: none;
+			border-left: none;
+			background: none;
+			color: #fff;
+		}
+
+		#iniciarlive ul {
+			position: absolute;
+
+		}
+
+		#iniciarlive li {
+			font-family: sans-serif;
+			font-size: 15pt;
+			background-color: #333;
+			padding: 0.1% 10px 0.1% 10px;
+			margin: 0.9% 10px 5px 0px;
+			border-radius: 20px;
+			list-style: none;
+			display: inline-block;
+			color: #999;
+			cursor: pointer;
+				transition: 1s;
+		}
+		#iniciarlive li:hover {
+			background-color: #555;
+			color: #fff;
+			transition: 1s;
+		}
+
+
+		#postagens {
+			width: 94%;
+			height: 60vh;
+			background: none;
+			margin: auto auto auto auto;
+			position: relative;
+			border-radius: 5px;
+			
+		}
+
+		#postagens img {
+			width: 80%;
+			
+		}
+		
+
+		#fundodaimagem {
+			background-color: #000;
+			width: 100%;
+			border-bottom: 1px solid #333;
+			border-top: 1px solid #333;
+			margin: 20px auto 7gta-5-trevor-carro-raro.jpg0px 4%;
+			
+		}
+
+
+		#nomedapessoa {
+			margin: 20px auto 10px 4%;
+			font-family: sans-serif;
+			color: #999;
+			border-top: 1px solid #333;
+			padding: 10px;
+		}
+
+	</style>
+
+
+
+</head>
+<body>
+
+
+	
+
+<div id="barrasuperior">
+	
+	<input type="text" name="pesquisaamigos" id="barradepesquisa" placeholder="Encontre outros Gamers">
+
+
+</div>
+<div id="teladefundo"></div>
+
+<div id="containerprincipal">
+	
+
+	<div id="status">
+		
+		<center><input type="text" name="status" id="inputstatus" placeholder="O que está fazendo ?"></center>
+
+
+		<ul id="iniciarlive">
+			<li>Iniciar Live</li>
+			<li>Postar Fotos</li>
+			<li>Criar Torneio</li>
+		</ul>
+
+	</div>
+
+
+	<div id="postagens">
+		<h1 id="nomedapessoa">Nome da Pessoa</h1>
+		<center><div id="fundodaimagem">
+		<img src="GTA-5-APK-Android.jpg">
+		</div></center>
+				
+
+		<h1 id="nomedapessoa">Nome da Pessoa 2</h1>
+		<center><div id="fundodaimagem">
+		<img src="5912a9135bafe34d4e25ba07.jpg">
+		</div></center>
+
+
+
+		<h1 id="nomedapessoa">Nome da Pessoa 3</h1>
+		<center><div id="fundodaimagem">
+		<img src="gta-5-trevor-carro-raro.jpg">
+		</div></center>
+
+
+
+
+
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<div id="perfil">
+	<center><div id="fotoperfil">
+		
+
+	</div></center>
+	
+	<center><h1 id="nomedeusuario">Marcos Vinicios</h1></center>
+	<center><h2 id="idade">21 anos</h2></center>
+
+	<center><h2 id="jogos"> Jogos: </h2></center>
+
+	<center><h2 id="jogos1">Call of Duty</h2></center>
+	<center><h2 id="pontuacao"> 450 pontos </h2></center>
+
+
+	<center><h2 id="jogos2">GTA IV</h2></center>
+	<center><h2 id="pontuacao"> 760 pontos </h2></center>
+
+
+	<center><h2 id="jogos2">Minecraft</h2></center>
+	<center><h2 id="pontuacao"> 900 pontos </h2></center>
+
+
+	<center><h2 id="jogos3">Ver Todos</h2></center>
+
+
+
+</div>
+
+
+
+
+</body>
+</html>
